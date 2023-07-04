@@ -48,7 +48,7 @@ export const MenuTop: React.FC<{children : React.ReactNode}> = ({children}) =>{
                     onClick={toggleTheme}
                     />
                 </Box>                        
-                <Box justifyContent="center" marginLeft="auto" display="flex" >
+                <Box justifyContent="center" marginLeft="auto" display="flex"  >
                     {smDown ? '' : 
                     <Button>
                         <Link
