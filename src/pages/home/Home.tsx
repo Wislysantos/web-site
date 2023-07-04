@@ -16,7 +16,7 @@ export const Home: React.FC = ()=>{
     return(
         <>
             <Box component="span" sx={sx.divPrincipal}>
-                <Box>
+                <Box >
                 <Typography fontSize={mdDown ? '9px' : '15px'}>Hello, word!_</Typography>
                 <Typography fontSize={mdDown ? xss ? '2rem': '3rem' : '5rem'}>Olá, sou Wisly Santos...</Typography>
                 <Typography  fontSize={mdDown ? xss ? '0.7em' : '0.9em':'1.5em' }sx={sx.paragrafo}><TypeIt getBeforeInit={(instance)=>{                    

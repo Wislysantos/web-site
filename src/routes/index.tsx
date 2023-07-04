@@ -30,7 +30,6 @@ export const AppRouter = () => {
             <Route path="/Sobre-mim" element={<SobreMim/>}/>
             <Route path="/Meus-projetos" Component={MeusProjetos}/>
             <Route path="/Conhecimentos" Component={Conhecimentos}/>
-            <Route path="/Contato" Component={Contato}/>
 
             <Route path="*" element={<Navigate to="/Home"/>}/>
         </Routes>

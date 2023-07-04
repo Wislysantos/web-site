@@ -1,4 +1,4 @@
-import { BottomNavigationAction, Box, Button, Paper, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { AppBar, BottomNavigationAction, Box, Button, Paper, Typography, useMediaQuery, useTheme } from "@mui/material"
 import React from "react"
 import { useAppThemeContext } from "../../context";
 
@@ -29,11 +29,13 @@ export const MenuTop: React.FC<{children : React.ReactNode}> = ({children}) =>{
 
     return(
     <>
-        <Box >
-            <Box
+        <Box sx={{ width:"100%", }}>
+            <AppBar position="fixed">
+            <Box 
             gap={1}
             padding={1}
             paddingX={2}
+            borderRadius={0}
             display="flex"
             alignItems="center"
             height={menuTopDown ? theme.spacing(10) : theme.spacing(5)}
@@ -47,6 +49,18 @@ export const MenuTop: React.FC<{children : React.ReactNode}> = ({children}) =>{
                     />
                 </Box>                        
                 <Box justifyContent="center" marginLeft="auto" display="flex" >
+                    {smDown ? '' : 
+                    <Button>
+                        <Link
+                            style={{textDecoration:"none"}}
+                            to="/Home"
+                            >
+                            <Typography variant="button" whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                                Home
+                            </Typography>
+                        </Link>
+                    </Button>
+                            }
                     <Button sx={{paddingY:"0px"}}>
                         <Link
                             style={{textDecoration:"none"}}
@@ -77,16 +91,7 @@ export const MenuTop: React.FC<{children : React.ReactNode}> = ({children}) =>{
                             </Typography>
                         </Link>
                     </Button>
-                    <Button>
-                        <Link
-                            style={{textDecoration:"none"}}
-                            to="/Contato"
-                            >
-                            <Typography variant="button" whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
-                            Contato
-                            </Typography>
-                        </Link>
-                    </Button>
+                    
                 </Box>
                 <Box justifyContent="flex-end" marginLeft="auto" marginRight="0px">
                     <Link to="https://www.linkedin.com/in/wisly-santos-2172501a3/">
@@ -103,6 +108,7 @@ export const MenuTop: React.FC<{children : React.ReactNode}> = ({children}) =>{
                     </Link>
                 </Box>
             </Box>
+            </AppBar>
         </Box>
         <Box>
             {children}
